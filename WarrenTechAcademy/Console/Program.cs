@@ -1,5 +1,7 @@
 ﻿using Console._0___TipoValor;
+using Console._1___TipoReferencia;
 using Console._99___Exercicios;
+using System.Collections.Generic;
 
 namespace Console
 {
@@ -7,16 +9,11 @@ namespace Console
     {
         static void Main(string[] args)
         {
-            //BemVindo.Mensagem(); // Chamada de método estático
+            //TestarValores.Executa();
 
-            //TipoNumerico TipoNumerico = new TipoNumerico();
-            //TipoNumerico.Executa();
+            TestarPessoas.ExecutaFisica();
 
-            //TipoNumerico2.Executa();
-
-            _000Cadastro.Exercicio01();
-
-            System.Console.ReadLine();
+            TestarPessoas.ExecutaJuridica();
         }
     }
 }

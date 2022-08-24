@@ -15,17 +15,16 @@
             System.Console.Write(@"Olá, bem vindo ao sistema de cadastro de usuário!
 
 Por favor, informe seu nome: ");
-            string nome = System.Console.ReadLine();
+            string nome = System.Console.ReadLine().Trim();
             System.Console.Write("Por favor, informe seu sobrenome: ");
-            string sobrenome = System.Console.ReadLine();
+            string sobrenome = System.Console.ReadLine().Trim();
             System.Console.Write("Por favor, informe a sua idade: ");
             byte idade = System.Convert.ToByte(System.Console.ReadLine());
 
             System.Console.Clear();
 
             System.Console.ForegroundColor = System.ConsoleColor.Blue;
-            System.Console.WriteLine($@"
-Cadastro realizado com sucesso:
+            System.Console.WriteLine($@"Cadastro realizado com sucesso:
 
 Nome completo: {nome} {sobrenome}, Idade: {idade}
 
