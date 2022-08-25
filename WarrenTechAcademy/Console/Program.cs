@@ -11,9 +11,12 @@ namespace Console
         {
             //TestarValores.Executa();
 
-            TestarPessoas.ExecutaFisica();
+            //TestarPessoas.ExecutaFisica();
 
-            TestarPessoas.ExecutaJuridica();
+            //TestarPessoas.ExecutaJuridica();
+
+            TestarPessoas.ExecutaPessoa();
+            System.Console.Read();
         }
     }
 }
