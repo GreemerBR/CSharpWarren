@@ -2,35 +2,35 @@
 
 namespace Console._1___TipoReferencia
 {
-    internal class BaseRepository : IRepositorycs
+    internal class BaseRepository<T> : IRepository<T> where T : BaseModel
     {
-        List<Pessoa> pessoas;
+        List<T> objetos;
 
         public BaseRepository()
         {
-            this.pessoas = new List<Pessoa>();
+            this.objetos = new List<T>();
         }
 
-        public string Creat(Pessoa pessoa)
+        public virtual string Creat(T objeto)
         {
-            this.pessoas.Add(pessoa);
-            return $"Pessoa: {pessoa.Nome} {pessoa.Sobrenome} foi salva com sucesso!";
+            this.objetos.Add(objeto);
+            return $"O dado de id: {objeto.Id} foi salvo com sucesso!";
         }
 
-        public string Delete(int id)
+        public virtual string Delete(int id)
         {
-            this.pessoas.RemoveAt(id);
-            return $"Pessoa física de id: {id} foi deletada com sucesso!";
+            this.objetos.RemoveAt(id);
+            return $"O dado de id: {id} foi deletado com sucesso!";
         }
 
-        public List<Pessoa> Read()
+        public virtual List<T> Read()
         {
-            return pessoas;
+            return objetos;
         }
 
-        public string Update(Pessoa pessoa)
+        public virtual string Update(T objeto)
         {
-            return $"Pessoa: {pessoa.Nome} {pessoa.Sobrenome} foi alterada com sucesso!";
+            return $"O dado de id: {objeto.Id} foi alterado com sucesso!";
         }
     }
 }

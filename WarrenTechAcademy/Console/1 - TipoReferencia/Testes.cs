@@ -1,8 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using Console._1___TipoReferencia.Animais;
+using Console._1___TipoReferencia.Pessoas;
+using Console._1___TipoReferencia.Produtos;
 
 namespace Console._1___TipoReferencia
 {
-    internal class TestarPessoas
+    internal class Testes
     {
         public static void ExecutaPessoa()
         {
@@ -29,7 +31,7 @@ namespace Console._1___TipoReferencia
             System.Console.WriteLine(pessoaF.Saudar());
             System.Console.WriteLine(pessoaJ.Saudar());
 
-            BaseRepository repo = new BaseRepository();
+            BaseRepository<Pessoa> repo = new BaseRepository<Pessoa>();
             repo.Creat(pessoa);
             repo.Creat(pessoaF2);
             repo.Creat(pessoaJ2);
@@ -45,7 +47,7 @@ namespace Console._1___TipoReferencia
             var pessoaFisica1 = new PessoaFisica("Gregory", "Zimmer", "08561161906");
             var pessoaFisica2 = new PessoaFisica("Michel", "Konig", "09492200945");
 
-            var pessoaFisicaRepository = new BaseRepository();
+            var pessoaFisicaRepository = new BaseRepository<Pessoa>();
             var msg1 = pessoaFisicaRepository.Creat(pessoaFisica1);
             System.Console.WriteLine(msg1);
             var msg2 = pessoaFisicaRepository.Creat(pessoaFisica2);
@@ -59,13 +61,12 @@ namespace Console._1___TipoReferencia
 
             System.Console.ReadLine();
         }
-
         public static void ExecutaJuridica()
         {
             var pessoaJuridica1 = new PessoaJuridica("Warren", "Invest", "12345678000122");
             var pessoaJuridica2 = new PessoaJuridica("Outro", "Invest", "12345678000125");
 
-            var pessoaJuridicaRepository = new BaseRepository();
+            var pessoaJuridicaRepository = new BaseRepository<Pessoa>();
             var msg3 = pessoaJuridicaRepository.Creat(pessoaJuridica1);
             System.Console.WriteLine(msg3);
             var msg4 = pessoaJuridicaRepository.Creat(pessoaJuridica2);
@@ -75,6 +76,40 @@ namespace Console._1___TipoReferencia
             foreach (var pessoaJuridica in pessoasJuridicas)
             {
                 System.Console.WriteLine(pessoaJuridica.Saudar());
+            }
+
+            System.Console.ReadLine();
+        }
+        public static void ExecutaProduto()
+        {
+            var produto1 = new Produto("Boneco Ben 9", "Um boneco muito louco com 10 formas diferentes");
+
+            var produtoRepository = new BaseRepository<Produto>();
+
+            produtoRepository.Creat(produto1);
+
+            var produtos = produtoRepository.Read();
+
+            foreach (var produto in produtos)
+            {
+                System.Console.WriteLine(produto.Comprar());
+            }
+
+            System.Console.ReadLine();
+        }
+        public static void ExecutaAnimal()
+        {
+            var animal1 = new Animal("Clotilde", "Roedor", "Ratazana");
+
+            var animalRepository = new BaseRepository<Animal>();
+
+            animalRepository.Creat(animal1);
+
+            var animais = animalRepository.Read();
+
+            foreach (var animal in animais)
+            {
+                System.Console.WriteLine(animal.Comer());
             }
 
             System.Console.ReadLine();
