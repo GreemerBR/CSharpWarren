@@ -6,41 +6,41 @@ namespace WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AnimalController : ControllerBase
+    public class PlantaController : ControllerBase
     {
-        private AnimalRepository _repository;
+        private PlantaRepository _repository;
 
-        public AnimalController()
+        public PlantaController()
         {
-            this._repository = new AnimalRepository();
+            this._repository = new PlantaRepository();
         }
 
-        [HttpGet(Name = "Animal")]
-        public List<Animal> Get()
+        [HttpGet(Name = "Planta")]
+        public List<Planta> GetAll()
         {
             return _repository.GetAll();
         }
 
         [HttpGet("{id}")]
-        public Animal GetById(int id)
+        public Planta GetById(int id)
         {
             return _repository.GetById(id);
         }
 
         [HttpPost]
-        public string Post(Animal model)
+        public string Post(Planta model)
         {
             return _repository.Create(model);
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete]
         public string Delete(int id)
         {
             return _repository.Delete(id);
         }
 
         [HttpPut]
-        public string Update(Animal model)
+        public string Update(Planta model)
         {
             return _repository.Update(model);
         }

@@ -9,6 +9,5 @@ namespace Data.Respository
         string Delete(int id);
         List<T> GetAll();
         T GetById(int id);
-
     }
 }
