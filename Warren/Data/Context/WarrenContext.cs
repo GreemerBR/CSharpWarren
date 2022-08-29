@@ -10,6 +10,7 @@ namespace Data.Context
         // Caso não haja uma tabela criada, ele mesmo irá criar
         public DbSet<Animal> Animais { get; set; }
         public DbSet<Planta> Plantas { get; set; }
+        public DbSet<Usuario> Usarios { get; set; }
         #endregion
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
