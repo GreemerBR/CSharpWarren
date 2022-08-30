@@ -1,0 +1,29 @@
+docker version : ver se esta instalado e rodando
+
+docker images : mostra as imagens que estão baixadas no pc
+
+docker run NOMEdaIMAGEM: vai startar a imagem pela primeira vez
+
+docker ps : mostra os containers que estão em execução
+
+docker ps -a : mostra todos os containers
+
+docker start ID : vai startar o container
+
+docker stop ID : vai stopar o container
+
+docker restar ID : vai restartar o container
+
+docker rm ID : utilizado para removar o container, mas só se não estiver em execução
+
+docker rmi ID : utilizado para remover a imagem, caso está não esteja sendo utilizada por algum container
+
+docker container prune : vai apagar todos os containers, mas antes pergunta se quer ou não fazer isso
+
+docker run -d -e POSTGRES_PASSWORD=COLOCAaSENHAqueEUquiser --name=COLOCAoNomeQUEeuQUISER -p NUMEROdaPORTAinternaDEconexaoQUEeuQUISER=5432 postgres : para criar containers no postgres
+
+docker inspect ID : traz as informações do container
+
+docker build -f NOMEdoPROJETO/Dockerfile -t NOMEdeUSUARIOnoDOCKER/NOMEqueQUERdarPARAimagem . : para buildar uma imagem a partir da pasta do nosso projeto 
+
+docker run -d -p 80:80 NOMEdaIMAGEM

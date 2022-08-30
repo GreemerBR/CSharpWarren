@@ -7,10 +7,10 @@ namespace Data.Respository
     {
         public virtual string Create(T entity)
         {
-            using (WarrenContext warrencontext = new WarrenContext())
+            using (WarrenContext warrenContext = new WarrenContext())
             {
-                warrencontext.Set<T>().Add(entity);
-                warrencontext.SaveChanges();
+                warrenContext.Set<T>().Add(entity);
+                warrenContext.SaveChanges();
             }
             return "Objeto criado";
         }
@@ -18,10 +18,14 @@ namespace Data.Respository
         {
             T entity = GetById(id);
 
-            using (WarrenContext warrencontext = new WarrenContext())
+            using (WarrenContext warrenContext = new WarrenContext())
             {
-                warrencontext.Entry<T>(entity).State = Microsoft.EntityFrameworkCore.EntityState.Deleted;
-                warrencontext.SaveChanges();
+                if (entity != null)
+                {
+                    warrenContext.Entry<T>(entity).State = Microsoft.EntityFrameworkCore.EntityState.Deleted;
+                    warrenContext.SaveChanges();
+                }
+
             }
             return "Objeto deletado";
         }
@@ -30,9 +34,9 @@ namespace Data.Respository
         {
             List<T> list = new List<T>();
 
-            using (WarrenContext warrencontext = new WarrenContext())
+            using (WarrenContext warrenContext = new WarrenContext())
             {
-                list = warrencontext.Set<T>().ToList();
+                list = warrenContext.Set<T>().ToList();
             }
 
             return list;
@@ -42,9 +46,9 @@ namespace Data.Respository
         {
             T entity = null;
 
-            using (WarrenContext warrencontext = new WarrenContext())
+            using (WarrenContext warrenContext = new WarrenContext())
             {
-                entity = warrencontext.Set<T>().Find(id);
+                entity = warrenContext.Set<T>().Find(id);
             }
 
             return entity;
@@ -52,10 +56,10 @@ namespace Data.Respository
 
         public virtual string Update(T entity)
         {
-            using (WarrenContext warrencontext = new WarrenContext())
+            using (WarrenContext warrenContext = new WarrenContext())
             {
-                warrencontext.Entry<T>(entity).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
-                warrencontext.SaveChanges();
+                warrenContext.Entry<T>(entity).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                warrenContext.SaveChanges();
             }
             return "Objeto alterado";
         }

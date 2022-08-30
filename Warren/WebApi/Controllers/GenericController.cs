@@ -15,31 +15,31 @@ namespace WebApi.Controllers
             this._repository = repository;
         }
 
-        [HttpGet("GetAll")]
+        [HttpGet()]
         public List<T> Get()
         {
             return _repository.GetAll();
         }
 
-        [HttpGet("GetById/{id}")]
+        [HttpGet("{id}")]
         public T GetById(int id)
         {
             return _repository.GetById(id);
         }
 
-        [HttpPost("Post")]
+        [HttpPost()]
         public string Post(T model)
         {
             return _repository.Create(model);
         }
 
-        [HttpDelete("Delete/{id}")]
+        [HttpDelete("{id}")]
         public string Delete(int id)
         {
             return _repository.Delete(id);
         }
 
-        [HttpPut("Put")]
+        [HttpPut()]
         public string Update(T model)
         {
             return _repository.Update(model);

@@ -1,0 +1,24 @@
+﻿using System.Security.Cryptography;
+using System.Text;
+
+namespace Data.Utils
+{
+    internal class Criptografia
+    {
+        public static string Criptografar(string entrada)
+        {
+            MD5 mD5 = MD5.Create();
+            byte[] entradaBytes = Encoding.UTF8.GetBytes(entrada);
+            byte[] hash = mD5.ComputeHash(entradaBytes);
+
+            StringBuilder sb = new StringBuilder();
+            for(int i = 0; i < hash.Length; i++)
+            {
+                // "X" significa que vai converter para hexadecimal com 2 casa
+                sb.Append(hash[i].ToString("X2"));
+            }
+
+            return sb.ToString();
+        }
+    }
+}
