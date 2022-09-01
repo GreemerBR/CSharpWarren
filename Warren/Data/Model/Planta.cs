@@ -2,8 +2,8 @@
 {
     public class Planta : BaseModel
     {
-        public string Nome { get; set; }
-        public string Cor { get; set; }
-        public string Tipo { get; set; }
+        public string Nome { get; set; } = String.Empty;
+        public string Cor { get; set; } = String.Empty;
+        public string Tipo { get; set; } = String.Empty;
     }
 }

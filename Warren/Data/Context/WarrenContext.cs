@@ -11,6 +11,8 @@ namespace Data.Context
         public DbSet<Animal> Animais { get; set; }
         public DbSet<Planta> Plantas { get; set; }
         public DbSet<Usuario> Usarios { get; set; }
+        public DbSet<Produto> Produtos { get; set; }
+        public DbSet<Categoria> Categorias { get; set; }
         #endregion
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

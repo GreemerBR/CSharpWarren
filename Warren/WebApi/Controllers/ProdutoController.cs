@@ -3,7 +3,7 @@ using Data.Respository;
 
 namespace WebApi.Controllers
 {
-    public class UsuarioController : GenericController<Usuario, UsuarioRepository>
+    public class ProdutoController : GenericController<Produto, ProdutoRepository>
     {
     }
 }
