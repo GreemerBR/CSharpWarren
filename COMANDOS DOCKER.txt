@@ -1,4 +1,4 @@
-docker version : ver se esta instalado e rodando
+docker docker version : ver se esta instalado e rodando
 
 docker images : mostra as imagens que estão baixadas no pc
 
@@ -28,3 +28,5 @@ NA PASTA DA SOLUÇÃO
 docker build -f NOMEdoPROJETO/Dockerfile -t NOMEdeUSUARIOnoDOCKER/NOMEqueQUERdarPARAimagem . : para buildar uma imagem a partir da pasta do nosso projeto 
 
 docker run -d -p 80:80 NOMEdaIMAGEM
+
+docker push NOMEdeUSUARIOnoDOCKER/NOMEqueQUERdarPARAimagem
